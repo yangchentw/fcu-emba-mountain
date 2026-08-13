@@ -1,0 +1,4 @@
+---
+import { pages, site } from '../data/site';
+---
+<header><a class="brand" href="/">{site.name}</a><nav aria-label="主要導覽">{pages.map((page) => <a href={page.href}>{page.label}</a>)}</nav></header>

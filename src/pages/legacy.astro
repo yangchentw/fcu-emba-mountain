@@ -1,0 +1,4 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro'; import { leadership } from '../data/site';
+---
+<BaseLayout title="組織與傳承" description="峰鷹登山協會的組織原則、幹部職掌與歷屆傳承。" path="/legacy/"><section><p>LEGACY</p><h1>組織與傳承</h1><p>會員大會為最高權力機構；會長對內綜理會務、對外代表協會，並由總幹事與各組幹部共同推展會務。</p><div class="timeline">{leadership.map((member) => <article class="card"><h2>{member.term}</h2><p><strong>會長</strong><br />{member.president}</p><p><strong>總幹事</strong><br />{member.secretaryGeneral}</p></article>)}</div><h2>共同分工</h2><p>財務、活動、公關、資訊、藝文與總務組，分別支持年度規劃、活動執行、會員互動、資訊公告、設計與物資配置。</p></section></BaseLayout>

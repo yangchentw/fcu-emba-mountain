@@ -1,0 +1,5 @@
+---
+interface Props { href: string; label: string; external?: boolean }
+const { href, label, external = false } = Astro.props;
+---
+<a class="cta" href={href} target={external ? '_blank' : undefined} rel={external ? 'noopener noreferrer' : undefined}>{label}{external && <span class="sr-only">（在新分頁開啟）</span>}</a>

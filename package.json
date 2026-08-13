@@ -1,0 +1,22 @@
+{
+  "name": "fcu-emba-mountain",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "ASTRO_TELEMETRY_DISABLED=1 astro dev",
+    "build": "ASTRO_TELEMETRY_DISABLED=1 astro build",
+    "preview": "ASTRO_TELEMETRY_DISABLED=1 astro preview",
+    "test": "vitest run",
+    "test:e2e": "playwright test",
+    "images": "node scripts/optimize-images.mjs"
+  },
+  "devDependencies": {
+    "@astrojs/sitemap": "^3.6.0",
+    "@playwright/test": "^1.55.0",
+    "astro": "^5.0.0",
+    "sharp": "^0.34.0",
+    "typescript": "^5.7.0",
+    "vitest": "^3.0.0"
+  }
+}

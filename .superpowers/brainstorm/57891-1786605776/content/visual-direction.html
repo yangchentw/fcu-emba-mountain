@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    :root { --forest:#496f3f; --sun:#e5b900; --ink:#172018; --mist:#eff2ed; }
+    * { box-sizing:border-box; } body { margin:0; background:#f4f5f2; color:var(--ink); font-family:-apple-system,BlinkMacSystemFont,"Noto Sans TC",sans-serif; }
+    main { max-width:1180px; margin:auto; padding:42px 24px 72px; } h1 { font-size:30px; margin:0 0 10px; } .lead { margin:0 0 30px; color:#596258; }
+    .grid { display:grid; grid-template-columns:repeat(3,1fr); gap:18px; } .card { overflow:hidden; background:#fff; border:1px solid #d9ded7; border-radius:18px; box-shadow:0 8px 28px #17201812; cursor:pointer; } .card:hover,.card.selected { outline:3px solid var(--sun); outline-offset:2px; } .preview { height:310px; position:relative; overflow:hidden; color:white; } .copy { padding:18px 20px 22px; } .copy h2 { font-size:18px; margin:0 0 8px; } .copy p { margin:0; color:#5d665c; line-height:1.6; font-size:14px; }
+    .a { background:linear-gradient(180deg,#0d1913aa,#0d191300),url('/files/../../../../照片/IMG_4926.jpg') center/cover; } .a nav,.b nav,.c nav { position:absolute; top:0; width:100%; padding:13px 18px; display:flex; justify-content:space-between; font-size:10px; letter-spacing:.12em; } .a .hero { position:absolute; left:20px; right:20px; bottom:28px; } .a .hero b { display:block; font-size:32px; line-height:1.1; } .a .cta { display:inline-block; margin-top:12px; padding:8px 14px; background:var(--sun); color:#202000; border-radius:20px; font-size:11px; }
+    .b { background:#f5f6f2; color:var(--ink); } .b nav { background:#ffffffdc; color:#263025; } .b .peak { position:absolute; width:220px; height:220px; background:var(--forest); transform:rotate(45deg); top:100px; left:68px; border-radius:16px; } .b .sun { position:absolute; width:58px; height:58px; border-radius:50%; background:var(--sun); top:72px; right:55px; } .b .hero { position:absolute; text-align:center; bottom:32px; width:100%; } .b .hero b { display:block; font-size:26px; } .b .hero span { font-size:10px; letter-spacing:.15em; }
+    .c { background:#14261a; } .c nav { background:#1d3522; } .c .photo { position:absolute; inset:52px 18px 76px; border-radius:10px; background:linear-gradient(#0000,#0008),url('/files/../../../../照片/IMG20260705112817.jpg') center/cover; } .c .hero { position:absolute; left:24px; bottom:24px; } .c .hero b { font-size:25px; display:block; } .c .hero span { color:#f1c70c; font-size:11px; }
+    .note { margin-top:28px; padding:17px 20px; border-radius:12px; background:#e8eee5; font-size:14px; line-height:1.6; } @media(max-width:800px){.grid{grid-template-columns:1fr}.preview{height:250px}}
+  </style>
+</head>
+<body><main>
+  <h1>請選擇首頁的視覺方向</h1>
+  <p class="lead">三個方向都會使用協會綠與日出金、保留獨立內頁、支援手機與 SEO；差別在首頁帶領感與 Apple 式滾動效果的強度。</p>
+  <section class="grid">
+    <article class="card" data-choice="a" onclick="toggleSelect(this)"><div class="preview a"><nav><span>峰鷹登山協會</span><span>關於・活動・加入</span></nav><div class="hero"><b>登上山，<br>走向更遠。</b><span class="cta">立即加入第三屆</span></div></div><div class="copy"><h2>A｜沉浸式影像敘事（建議）</h2><p>每個滾動段落以一張實景照片主導，文字短而有力。適合凸顯山林精神，仍以一般頁面保有最佳 SEO 與可讀性。</p></div></article>
+    <article class="card" data-choice="b" onclick="toggleSelect(this)"><div class="preview b"><nav><span>峰鷹登山協會</span><span>目錄</span></nav><i class="sun"></i><i class="peak"></i><div class="hero"><b>山的美，雲知道</b><span>逢甲大學 EMBA 峰鷹登山協會</span></div></div><div class="copy"><h2>B｜品牌宣言式</h2><p>以 Logo 幾何、留白與標語為主，照片移到內頁。風格最接近 Apple 的產品頁，但山景的情感張力較低。</p></div></article>
+    <article class="card" data-choice="c" onclick="toggleSelect(this)"><div class="preview c"><nav><span>FCU EMBA</span><span>MENU</span></nav><div class="photo"></div><div class="hero"><span>EST. 2023</span><b>峰鷹登山協會</b></div></div><div class="copy"><h2>C｜戶外誌編輯式</h2><p>深色頁面搭配攝影卡片與年度資訊，資訊感較強、互動較克制；適合活動紀錄多於品牌敘事的組織。</p></div></article>
+  </section>
+  <p class="note">建議選 A：首頁採照片驅動的滾動轉場，但每個主題仍有獨立網址，例如「關於協會／組織傳承／活動與社群／加入協會／安全與保育」，兼顧品牌感、搜尋可見度與 Cloudflare 的靜態部署效率。</p>
+</main></body></html>

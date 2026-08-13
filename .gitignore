@@ -1,0 +1,19 @@
+# Dependencies and framework output
+node_modules/
+dist/
+.astro/
+
+# Local test artifacts
+playwright-report/
+test-results/
+
+# Local brainstorming previews
+.superpowers/
+
+# Source materials kept outside Git
+照片/
+逢甲大學EMBA峰鷹登山協會章程.pdf
+逢甲大學EMBA峰鷹登山協會實行準則1130227.pdf
+
+# Operating-system metadata
+.DS_Store

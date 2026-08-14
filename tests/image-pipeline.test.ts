@@ -7,8 +7,15 @@ test('the image command has a committed source-image pipeline', () => {
 });
 
 test('the shared layout maps every content page to a dedicated association image', () => {
-  const layout = readFileSync('src/layouts/BaseLayout.astro', 'utf8');
-  for (const page of ['about-mountain.jpg', 'legacy-trail.jpg', 'activity-landscape.jpg', 'join-ridge.jpg']) {
-    expect(layout).toContain(`image('${page}')`);
+  const expectedImages = {
+    about: 'about-mountain.jpg',
+    legacy: 'legacy-trail.jpg',
+    activities: 'activity-landscape.jpg',
+    join: 'join-ridge.jpg',
+  };
+
+  for (const [route, image] of Object.entries(expectedImages)) {
+    const html = readFileSync(`dist/${route}/index.html`, 'utf8');
+    expect(html).toContain(`<img class="page-image" src="/images/${image}"`);
   }
 });

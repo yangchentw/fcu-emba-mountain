@@ -32,3 +32,15 @@ test('the legacy image keeps the hiker and summit sign without cover cropping', 
   expect(css).toMatch(/\.page-image--legacy\s*\{[^}]*max-height:\s*none/);
   expect(css).toMatch(/\.page-image--legacy\s*\{[^}]*object-fit:\s*contain/);
 });
+
+test('legacy cards use four distinct mountain palette classes with consistent ink text', () => {
+  const css = readFileSync('src/styles/global.css', 'utf8');
+  const legacyPage = readFileSync('src/pages/legacy.astro', 'utf8');
+
+  for (const className of ['founding', 'first', 'second', 'third']) {
+    expect(legacyPage).toContain(`term-card--${className}`);
+    expect(css).toMatch(new RegExp(`\\.term-card--${className}\\s*\\{[^}]*background:`));
+  }
+
+  expect(css).toMatch(/\.term-card\s*\{[^}]*color:\s*#132017/);
+});

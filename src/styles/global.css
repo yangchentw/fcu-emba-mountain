@@ -71,6 +71,11 @@ a:focus-visible { outline: 3px solid var(--gold); outline-offset: 3px; }
 .story-activity { background-image: var(--activity-image, url('/images/activity-landscape.jpg')); }
 .timeline { display: grid; gap: 1rem; grid-template-columns: repeat(4, 1fr); }
 .card { background: white; padding: 1.25rem; border-radius: 1rem; }
+.term-card { color: #132017; }
+.term-card--founding { background: #e9dfcc; }
+.term-card--first { background: #dce8d9; }
+.term-card--second { background: #dbe7e8; }
+.term-card--third { background: #f3d76b; }
 footer { background: var(--ink); color: white; }
 .sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0, 0, 0, 0); }
 

@@ -6,8 +6,8 @@ const assets = [
   ['參考資料/照片/IMG20260517101342.JPG', 'public/images/forest-ridge.jpg'],
   ['參考資料/照片/IMG20260517123202.JPG', 'public/images/activity-landscape.jpg'],
   ['參考資料/照片/IMG20260705112817.jpg', 'public/images/about-mountain.jpg'],
-  // Curated 3:2 crop derived from 參考資料/照片/IMG_1418.jpg.
-  ['參考資料/裁切/legacy-trail-crop.jpg', 'public/images/legacy-trail.jpg'],
+  // Keep the original 4:3 framing so the hiker and summit sign are both intact.
+  ['參考資料/照片/IMG_1418.jpg', 'public/images/legacy-trail.jpg'],
   ['參考資料/照片/IMG20260517103606.JPG', 'public/images/join-ridge.jpg'],
   ['參考資料/逢甲EMBA峰鷹登山協會LOGO-02.png', 'public/images/logo.png'],
 ];

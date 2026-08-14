@@ -9,9 +9,9 @@ const base = import.meta.env.BASE_URL;
 const siteBase = new URL(base, site.url).href;
 const canonical = new URL(path.replace(/^\//, ''), siteBase).href;
 const image = (name: string) => `${base}images/${name}`;
-const pageImages: Record<string, { src: string; alt: string }> = {
+const pageImages: Record<string, { src: string; alt: string; className?: string }> = {
   '/about/': { src: image('about-mountain.jpg'), alt: '高山步道與遠方山景' },
-  '/legacy/': { src: image('legacy-trail.jpg'), alt: '登山者與合歡北峰 3422M 山頂牌子' },
+  '/legacy/': { src: image('legacy-trail.jpg'), alt: '登山者與合歡北峰 3422M 山頂牌子', className: 'page-image--legacy' },
   '/activities/': { src: image('activity-landscape.jpg'), alt: '雲海與山巒景觀' },
   '/join/': { src: image('join-ridge.jpg'), alt: '山稜與天空景觀' },
 };
@@ -66,4 +66,4 @@ const structuredData = {
   ],
 };
 ---
-<!doctype html><html lang="zh-Hant"><head><meta charset="utf-8" /><meta name="viewport" content="width=device-width" /><title>{`${title} ｜ ${site.name}`}</title><meta name="description" content={description} /><meta name="robots" content="index,follow" /><link rel="canonical" href={canonical} /><meta property="og:title" content={title} /><meta property="og:description" content={description} /><meta property="og:type" content="website" /><meta property="og:url" content={canonical} /><meta property="og:site_name" content={site.name} /><meta property="og:locale" content="zh_TW" /><meta property="og:image" content={absoluteImage} /><meta property="og:image:alt" content={socialImage.alt} /><meta name="twitter:card" content="summary_large_image" /><meta name="twitter:title" content={title} /><meta name="twitter:description" content={description} /><meta name="twitter:image" content={absoluteImage} /><script type="application/ld+json" set:html={JSON.stringify(structuredData)}></script></head><body><a class="skip" href="#main">跳至主要內容</a><Header />{pageImage && <img class="page-image" src={pageImage.src} alt={pageImage.alt} loading="eager" />}<main id="main"><slot /></main><Footer /></body></html>
+<!doctype html><html lang="zh-Hant"><head><meta charset="utf-8" /><meta name="viewport" content="width=device-width" /><title>{`${title} ｜ ${site.name}`}</title><meta name="description" content={description} /><meta name="robots" content="index,follow" /><link rel="canonical" href={canonical} /><meta property="og:title" content={title} /><meta property="og:description" content={description} /><meta property="og:type" content="website" /><meta property="og:url" content={canonical} /><meta property="og:site_name" content={site.name} /><meta property="og:locale" content="zh_TW" /><meta property="og:image" content={absoluteImage} /><meta property="og:image:alt" content={socialImage.alt} /><meta name="twitter:card" content="summary_large_image" /><meta name="twitter:title" content={title} /><meta name="twitter:description" content={description} /><meta name="twitter:image" content={absoluteImage} /><script type="application/ld+json" set:html={JSON.stringify(structuredData)}></script></head><body><a class="skip" href="#main">跳至主要內容</a><Header />{pageImage && <img class:list={['page-image', pageImage.className]} src={pageImage.src} alt={pageImage.alt} loading="eager" />}<main id="main"><slot /></main><Footer /></body></html>

@@ -21,6 +21,12 @@ test('homepage presents the mountain poem as the hero heading', () => {
   expect(home).toContain('風的勁，山頂上的您知曉');
 });
 
+test('homepage gives the recruitment CTA its own hero spacing', () => {
+  const home = readFileSync(resolve('dist/index.html'), 'utf8');
+
+  expect(home).toContain('<div class="hero-cta">');
+});
+
 test('footer Facebook link includes a decorative icon', () => {
   const home = readFileSync(resolve('dist/index.html'), 'utf8');
 

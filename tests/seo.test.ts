@@ -21,3 +21,11 @@ test('built homepage has canonical social metadata and organization schema', () 
   expect(home).toContain('"@type":"WebSite"');
   expect(home).toContain('"@type":"BreadcrumbList"');
 });
+
+test('homepage publishes concise association information for search answers', () => {
+  const home = readFileSync('dist/index.html', 'utf8');
+
+  expect(home).toContain('協會資訊');
+  expect(home).toContain('活動資訊在哪裡發布？');
+  expect(home).toContain('如何加入協會？');
+});

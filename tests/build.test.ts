@@ -11,3 +11,12 @@ test('header renders the association logo', () => {
   expect(home).toContain('src="/images/logo.png"');
   expect(home).toContain('逢甲大學 EMBA 峰鷹登山協會標誌');
 });
+
+test('homepage presents the mountain poem with semantic text', () => {
+  const home = readFileSync(resolve('dist/index.html'), 'utf8');
+
+  expect(home).toContain('<blockquote class="mountain-poem"');
+  expect(home).toContain('山的美，雲知道');
+  expect(home).toContain('雲的媚，風明瞭');
+  expect(home).toContain('風的勁，山頂上的您知曉');
+});

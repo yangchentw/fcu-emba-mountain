@@ -2,11 +2,12 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import CtaLink from '../components/CtaLink.astro';
 import { externalLinks } from '../data/site';
+const base = import.meta.env.BASE_URL;
 ---
 <BaseLayout title="登上山，走向更遠" description="逢甲 EMBA 峰鷹登山協會官方網站。" path="/">
   <section class="hero"><div><p>FCU EMBA MOUNTAIN</p><h1>登上山，<br />走向更遠。</h1><CtaLink href={externalLinks.recruitment} label="立即加入第三屆" external /></div></section>
-  <section class="story story-photo story-forest reveal"><div><p>2014 → 2023</p><h2>因山相聚，因同行而更遠。</h2><p class="lead">我們推廣登山運動、正確的山野知識與安全意識，也珍惜自然保育與 EMBA 學長姐間的情誼。</p><a href="/about/">認識峰鷹 →</a></div></section>
+  <section class="story story-photo story-forest reveal"><div><p>2014 → 2023</p><h2>因山相聚，因同行而更遠。</h2><p class="lead">我們推廣登山運動、正確的山野知識與安全意識，也珍惜自然保育與 EMBA 學長姐間的情誼。</p><a href={`${base}about/`}>認識峰鷹 →</a></div></section>
   <section class="story story-photo story-activity reveal"><div><h2>一起走進山裡</h2><p>每月社團日與假日活動，最新公告與活動花絮在 Facebook 社群。</p><a href="/activities/">探索活動與社群 →</a></div></section>
   <section class="story reveal"><h2>傳承，向上</h2><p>一屆又一屆，讓峰鷹持續飛向更高、更遠的山。</p><a href="/legacy/">查看組織與傳承 →</a></section>
-  <script is:inline src="/reveal.js"></script>
+  <script is:inline src={`${base}reveal.js`}></script>
 </BaseLayout>

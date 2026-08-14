@@ -1,4 +1,4 @@
-export const site = { name: '逢甲大學 EMBA 峰鷹登山協會', description: '以登山、安全、保育與情誼，連結逢甲 EMBA 愛山夥伴。', url: 'https://mountain.fcuemba.org' } as const;
+export const site = { name: '逢甲大學 EMBA 峰鷹登山協會', description: '以登山、安全、保育與情誼，連結逢甲 EMBA 愛山夥伴。', url: 'https://fcumountain.eu.org' } as const;
 export const externalLinks = { facebook: 'https://www.facebook.com/groups/fcuembamountain', recruitment: 'https://forms.gle/x8v66LxiV8ZvPxAi7' } as const;
 export const pages = [{ href: '/about/', label: '關於峰鷹' }, { href: '/legacy/', label: '組織與傳承' }, { href: '/activities/', label: '活動與社群' }, { href: '/join/', label: '加入協會' }] as const;
 export const leadership = [

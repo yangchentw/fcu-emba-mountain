@@ -6,6 +6,13 @@ test('static build writes the home page', () => {
   expect(existsSync(resolve('dist/index.html'))).toBe(true);
 });
 
+test('header uses the approved warm mist and Peak Eagle green baseline', () => {
+  const css = readFileSync(resolve('src/styles/global.css'), 'utf8');
+
+  expect(css).toMatch(/background:\s*#f4f1e8/);
+  expect(css).toMatch(/border-bottom:\s*2px solid #496f3f/);
+});
+
 test('header renders the association logo', () => {
   const home = readFileSync(resolve('dist/index.html'), 'utf8');
   expect(home).toContain('src="/images/logo.png"');

@@ -1,1 +1,97 @@
-:root{--green:#496f3f;--gold:#e5b900;--ink:#132017;--mist:#f3f5f1}*{box-sizing:border-box}body{margin:0;background:var(--mist);color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"Noto Sans TC",sans-serif;line-height:1.7}header,footer,section{padding:1.25rem max(5vw,1.25rem)}header{display:flex;justify-content:space-between;gap:1rem;background:#fff;position:sticky;top:0;z-index:2}.brand{font-weight:800}nav{display:flex;gap:1rem;flex-wrap:wrap}a{color:inherit}.skip{position:absolute;left:-999px}.skip:focus{left:1rem;top:1rem;z-index:9;background:white;padding:.5rem}a:focus-visible{outline:3px solid var(--gold);outline-offset:3px}.page-image{display:block;width:min(100%,1200px);max-height:52vh;object-fit:cover;margin:0 auto}.hero{min-height:72vh;display:grid;place-items:center;text-align:center;color:#fff;background:linear-gradient(120deg,#102117a8,#10211730),var(--hero-image,url('/images/hero-mountain.jpg')) center 43%/cover}.hero h1{font-size:clamp(2.8rem,8vw,6rem);line-height:1.05}.lead{max-width:48rem;font-size:1.2rem}.cta{display:inline-block;padding:.75rem 1.2rem;border-radius:99px;background:var(--gold);color:#302800;text-decoration:none;font-weight:800}.story{min-height:55vh;display:grid;align-content:center;max-width:72rem;margin:auto}.story-photo{max-width:none;min-height:58vh;color:white;background-position:center;background-size:cover;background-attachment:scroll}.story-photo>div{width:min(72rem,100%);margin:auto;padding:clamp(3rem,9vw,8rem) max(5vw,1.25rem);background:linear-gradient(90deg,#102117e8 0%,#102117a0 42%,#10211700 78%)}.story-forest{background-image:var(--forest-image,url('/images/forest-ridge.jpg'))}.story-activity{background-image:var(--activity-image,url('/images/activity-landscape.jpg'))}.timeline{display:grid;gap:1rem;grid-template-columns:repeat(4,1fr)}.card{background:white;padding:1.25rem;border-radius:1rem}footer{background:var(--ink);color:white}.sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0)}@media(min-width:761px) and (hover:hover) and (pointer:fine){.story-photo{background-attachment:fixed}}@media(max-width:760px){header{position:static;display:block}.timeline{grid-template-columns:1fr 1fr}.hero{min-height:58vh}.story-photo{min-height:48vh}.story-photo>div{padding-block:4rem;background:linear-gradient(90deg,#102117d9,#10211752)}}@media(prefers-reduced-motion:no-preference){.reveal{transform:translateY(0)}.reveal.is-pending{opacity:0;transform:translateY(20px);transition:opacity .7s,transform .7s}.reveal.is-visible{opacity:1;transform:none}}@media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;animation:none!important;transition:none!important}.story-photo{background-attachment:scroll}}
+:root {
+  --green: #496f3f;
+  --gold: #e5b900;
+  --ink: #132017;
+  --mist: #f3f5f1;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--mist);
+  color: var(--ink);
+  font-family: -apple-system, BlinkMacSystemFont, "Noto Sans TC", sans-serif;
+  line-height: 1.7;
+}
+
+header, footer, section { padding: 1.25rem max(5vw, 1.25rem); }
+
+header {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  background: #f4f1e8;
+  border-bottom: 2px solid #496f3f;
+  position: sticky;
+  top: 0;
+  z-index: 2;
+}
+
+.brand { font-weight: 800; }
+nav { display: flex; gap: 1rem; flex-wrap: wrap; }
+a { color: inherit; }
+.skip { position: absolute; left: -999px; }
+.skip:focus { left: 1rem; top: 1rem; z-index: 9; background: white; padding: .5rem; }
+a:focus-visible { outline: 3px solid var(--gold); outline-offset: 3px; }
+.page-image { display: block; width: min(100%, 1200px); max-height: 52vh; object-fit: cover; margin: 0 auto; }
+
+.hero {
+  min-height: 72vh;
+  display: grid;
+  place-items: center;
+  text-align: center;
+  color: #fff;
+  background: linear-gradient(120deg, #102117a8, #10211730), var(--hero-image, url('/images/hero-mountain.jpg')) center 43% / cover;
+}
+
+.hero h1 { font-size: clamp(2.8rem, 8vw, 6rem); line-height: 1.05; }
+.lead { max-width: 48rem; font-size: 1.2rem; }
+.cta { display: inline-block; padding: .75rem 1.2rem; border-radius: 99px; background: var(--gold); color: #302800; text-decoration: none; font-weight: 800; }
+.story { min-height: 55vh; display: grid; align-content: center; max-width: 72rem; margin: auto; }
+
+.story-photo {
+  max-width: none;
+  min-height: 58vh;
+  color: white;
+  background-position: center;
+  background-size: cover;
+  background-attachment: scroll;
+}
+
+.story-photo > div {
+  width: min(72rem, 100%);
+  margin: auto;
+  padding: clamp(3rem, 9vw, 8rem) max(5vw, 1.25rem);
+  background: linear-gradient(90deg, #102117e8 0%, #102117a0 42%, #10211700 78%);
+}
+
+.story-forest { background-image: var(--forest-image, url('/images/forest-ridge.jpg')); }
+.story-activity { background-image: var(--activity-image, url('/images/activity-landscape.jpg')); }
+.timeline { display: grid; gap: 1rem; grid-template-columns: repeat(4, 1fr); }
+.card { background: white; padding: 1.25rem; border-radius: 1rem; }
+footer { background: var(--ink); color: white; }
+.sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0, 0, 0, 0); }
+
+@media (min-width: 761px) and (hover: hover) and (pointer: fine) {
+  .story-photo { background-attachment: fixed; }
+}
+
+@media (max-width: 760px) {
+  header { position: static; display: block; }
+  .timeline { grid-template-columns: 1fr 1fr; }
+  .hero { min-height: 58vh; }
+  .story-photo { min-height: 48vh; }
+  .story-photo > div { padding-block: 4rem; background: linear-gradient(90deg, #102117d9, #10211752); }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .reveal { transform: translateY(0); }
+  .reveal.is-pending { opacity: 0; transform: translateY(20px); transition: opacity .7s, transform .7s; }
+  .reveal.is-visible { opacity: 1; transform: none; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * { scroll-behavior: auto !important; animation: none !important; transition: none !important; }
+  .story-photo { background-attachment: scroll; }
+}

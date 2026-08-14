@@ -3,8 +3,8 @@ import { expect, test } from 'vitest';
 
 test('reveal content remains visible until JavaScript has initialized animation', () => {
   const css = readFileSync('src/styles/global.css', 'utf8');
-  expect(css).not.toContain('.reveal{opacity:0');
-  expect(css).toContain('.reveal.is-pending{opacity:0');
+  expect(css).not.toMatch(/\.reveal\s*\{\s*opacity:\s*0/);
+  expect(css).toMatch(/\.reveal\.is-pending\s*\{\s*opacity:\s*0/);
 });
 
 test('a single observer manages every reveal element', () => {

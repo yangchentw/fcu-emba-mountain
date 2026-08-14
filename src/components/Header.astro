@@ -1,4 +1,34 @@
 ---
 import { pages, site } from '../data/site';
+const base = import.meta.env.BASE_URL;
 ---
-<header><a class="brand" href="/">{site.name}</a><nav aria-label="主要導覽">{pages.map((page) => <a href={page.href}>{page.label}</a>)}</nav></header>
+<header>
+  <a class="brand" href={base}>
+    <img class="brand-logo" src={`${base}images/logo.png`} alt="逢甲大學 EMBA 峰鷹登山協會標誌" />
+    <span>{site.name}</span>
+  </a>
+  <nav aria-label="主要導覽">{pages.map((page) => <a href={page.href}>{page.label}</a>)}</nav>
+</header>
+
+<style>
+  .brand {
+    align-items: center;
+    display: inline-flex;
+    gap: 0.6rem;
+    text-decoration: none;
+  }
+
+  .brand-logo {
+    display: block;
+    height: 2.4rem;
+    object-fit: contain;
+    width: 2.4rem;
+  }
+
+  @media (max-width: 760px) {
+    .brand-logo {
+      height: 2rem;
+      width: 2rem;
+    }
+  }
+</style>

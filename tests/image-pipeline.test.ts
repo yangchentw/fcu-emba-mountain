@@ -3,7 +3,11 @@ import { expect, test } from 'vitest';
 
 test('the image command has a committed source-image pipeline', () => {
   expect(existsSync('scripts/optimize-images.mjs')).toBe(true);
-  expect(readFileSync('scripts/optimize-images.mjs', 'utf8')).toContain('hero-mountain.jpg');
+  const pipeline = readFileSync('scripts/optimize-images.mjs', 'utf8');
+
+  expect(pipeline).toContain('hero-mountain.jpg');
+  expect(pipeline).toContain('IMG_1418.jpg');
+  expect(pipeline).toContain('legacy-trail.jpg');
 });
 
 test('the shared layout maps every content page to a dedicated association image', () => {

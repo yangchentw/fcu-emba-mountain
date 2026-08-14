@@ -44,3 +44,11 @@ test('child pages describe their location with canonical structured data', () =>
   expect(about).toContain('rel="canonical" href="https://fcumountain.eu.org/about/"');
   expect(about).toContain('"name":"關於峰鷹","item":"https://fcumountain.eu.org/about/"');
 });
+
+test('README identifies the canonical sitemap submission URL', () => {
+  const readme = readFileSync('README.md', 'utf8');
+
+  expect(readme).toContain('https://fcumountain.eu.org/sitemap-index.xml');
+  expect(readme).toContain('Google Search Console');
+  expect(readme).toContain('Bing Webmaster Tools');
+});

@@ -1,13 +1,14 @@
 ---
 import { pages, site } from '../data/site';
 const base = import.meta.env.BASE_URL;
+const internalUrl = (path: string) => `${base}${path.replace(/^\//, '')}`;
 ---
 <header>
   <a class="brand" href={base}>
     <img class="brand-logo" src={`${base}images/logo.png`} alt="逢甲大學 EMBA 峰鷹登山協會標誌" />
     <span>{site.name}</span>
   </a>
-  <nav aria-label="主要導覽">{pages.map((page) => <a href={page.href}>{page.label}</a>)}</nav>
+  <nav aria-label="主要導覽">{pages.map((page) => <a href={internalUrl(page.href)}>{page.label}</a>)}</nav>
 </header>
 
 <style>

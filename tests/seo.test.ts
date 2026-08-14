@@ -29,3 +29,18 @@ test('homepage publishes concise association information for search answers', ()
   expect(home).toContain('活動資訊在哪裡發布？');
   expect(home).toContain('如何加入協會？');
 });
+
+test('the generated sitemap lists all public routes on the canonical origin', () => {
+  const sitemap = readFileSync('dist/sitemap-0.xml', 'utf8');
+
+  for (const path of ['/', '/about/', '/legacy/', '/activities/', '/join/']) {
+    expect(sitemap).toContain(`https://fcumountain.eu.org${path}`);
+  }
+});
+
+test('child pages describe their location with canonical structured data', () => {
+  const about = readFileSync('dist/about/index.html', 'utf8');
+
+  expect(about).toContain('rel="canonical" href="https://fcumountain.eu.org/about/"');
+  expect(about).toContain('"name":"關於峰鷹","item":"https://fcumountain.eu.org/about/"');
+});

@@ -9,6 +9,7 @@ test-results/
 
 # Local brainstorming previews
 .superpowers/
+.worktrees/
 
 # Source materials kept outside Git
 照片/

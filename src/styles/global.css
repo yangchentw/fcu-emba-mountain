@@ -36,7 +36,24 @@ a { color: inherit; }
 a:focus-visible { outline: 3px solid var(--gold); outline-offset: 3px; }
 .page-image { display: block; width: min(100%, 1200px); max-height: 52vh; object-fit: cover; margin: 0 auto; }
 .page-image--legacy { max-height: none; object-fit: contain; }
-.page-image--activity { object-position: center 75%; }
+
+.activity-hero {
+  min-height: min(900px, 82vh);
+  display: grid;
+  align-items: end;
+  padding: 0;
+  color: white;
+  background:
+    linear-gradient(90deg, #102117f2 0%, #102117bf 38%, #10211712 68%),
+    var(--activity-image, url('/images/activity-landscape.jpg')) center / contain no-repeat,
+    var(--ink);
+}
+
+.activity-hero__content {
+  width: min(100%, 42rem);
+  margin-left: max(5vw, 1.25rem);
+  padding: clamp(3rem, 8vw, 7rem) 0;
+}
 
 .hero {
   min-height: 72vh;
@@ -93,6 +110,14 @@ footer { background: var(--ink); color: white; }
   .hero { min-height: 58vh; }
   .story-photo { min-height: 48vh; }
   .story-photo > div { padding-block: 4rem; background: linear-gradient(90deg, #102117d9, #10211752); }
+  .activity-hero {
+    min-height: 760px;
+    background:
+      linear-gradient(0deg, #102117f4 0%, #102117cc 40%, #10211712 72%),
+      var(--activity-image, url('/images/activity-landscape.jpg')) center top / contain no-repeat,
+      var(--ink);
+  }
+  .activity-hero__content { width: auto; margin-inline: max(5vw, 1.25rem); padding-block: 3rem; }
 }
 
 @media (prefers-reduced-motion: no-preference) {

@@ -12,11 +12,10 @@ test('the image command has a committed source-image pipeline', () => {
   expect(pipeline).toContain('legacy-trail.jpg');
 });
 
-test('the shared layout maps every content page to a dedicated association image', () => {
+test('the shared layout maps non-activity content pages to a dedicated association image', () => {
   const expectedImages = {
     about: 'about-mountain.jpg',
     legacy: 'legacy-trail.jpg',
-    activities: 'activity-landscape.jpg',
     join: 'join-ridge.jpg',
   };
 
@@ -46,11 +45,15 @@ test('legacy cards use four distinct mountain palette classes with consistent in
   expect(css).toMatch(/\.term-card\s*\{[^}]*color:\s*#132017/);
 });
 
-test('the activity photo keeps its branded cup and snowman in the banner crop', () => {
+test('the activity page presents the complete branded photo in a dedicated hero', () => {
   const css = readFileSync('src/styles/global.css', 'utf8');
   const layout = readFileSync('src/layouts/BaseLayout.astro', 'utf8');
+  const activityPage = readFileSync('src/pages/activities.astro', 'utf8');
 
-  expect(css).toMatch(/\.story-activity\s*\{[^}]*background-position:\s*center 75%/);
-  expect(layout).toContain("'/activities/': { src: image('activity-landscape.jpg'), alt: '峰鷹登山協會杯子與雪人佇立高山岩石上', className: 'page-image--activity' }");
-  expect(css).toMatch(/\.page-image--activity\s*\{[^}]*object-position:\s*center 75%/);
+  expect(layout).not.toContain("'/activities/':");
+  expect(activityPage).toContain('class="activity-hero"');
+  expect(activityPage).toContain('<CtaLink href={externalLinks.facebook} label="前往 Facebook 社群" external />');
+  expect(css).toContain("center / contain no-repeat");
+  expect(css).toContain('var(--ink);');
+  expect(css).toMatch(/@media \(max-width: 760px\)[\s\S]*\.activity-hero__content\s*\{[^}]*width:\s*auto/);
 });

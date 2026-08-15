@@ -6,6 +6,7 @@ test('the image command has a committed source-image pipeline', () => {
   const pipeline = readFileSync('scripts/optimize-images.mjs', 'utf8');
 
   expect(pipeline).toContain('hero-mountain.jpg');
+  expect(pipeline).toContain("['參考資料/照片/IMG20260314124148.JPG', 'public/images/activity-landscape.jpg']");
   expect(pipeline).toContain('IMG_1418.jpg');
   expect(pipeline).toContain("['參考資料/照片/IMG_1418.jpg', 'public/images/legacy-trail.jpg']");
   expect(pipeline).toContain('legacy-trail.jpg');
@@ -43,4 +44,13 @@ test('legacy cards use four distinct mountain palette classes with consistent in
   }
 
   expect(css).toMatch(/\.term-card\s*\{[^}]*color:\s*#132017/);
+});
+
+test('the activity photo keeps its branded cup and snowman in the banner crop', () => {
+  const css = readFileSync('src/styles/global.css', 'utf8');
+  const layout = readFileSync('src/layouts/BaseLayout.astro', 'utf8');
+
+  expect(css).toMatch(/\.story-activity\s*\{[^}]*background-position:\s*center 75%/);
+  expect(layout).toContain("'/activities/': { src: image('activity-landscape.jpg'), alt: '峰鷹登山協會杯子與雪人佇立高山岩石上', className: 'page-image--activity' }");
+  expect(css).toMatch(/\.page-image--activity\s*\{[^}]*object-position:\s*center 75%/);
 });

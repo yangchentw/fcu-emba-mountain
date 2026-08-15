@@ -12,7 +12,7 @@ const image = (name: string) => `${base}images/${name}`;
 const pageImages: Record<string, { src: string; alt: string; className?: string }> = {
   '/about/': { src: image('about-mountain.jpg'), alt: '高山步道與遠方山景' },
   '/legacy/': { src: image('legacy-trail.jpg'), alt: '登山者與合歡北峰 3422M 山頂牌子', className: 'page-image--legacy' },
-  '/activities/': { src: image('activity-landscape.jpg'), alt: '雲海與山巒景觀' },
+  '/activities/': { src: image('activity-landscape.jpg'), alt: '峰鷹登山協會杯子與雪人佇立高山岩石上', className: 'page-image--activity' },
   '/join/': { src: image('join-ridge.jpg'), alt: '山稜與天空景觀' },
 };
 const pageImage = pageImages[path];

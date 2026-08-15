@@ -36,6 +36,7 @@ a { color: inherit; }
 a:focus-visible { outline: 3px solid var(--gold); outline-offset: 3px; }
 .page-image { display: block; width: min(100%, 1200px); max-height: 52vh; object-fit: cover; margin: 0 auto; }
 .page-image--legacy { max-height: none; object-fit: contain; }
+.page-image--activity { object-position: center 75%; }
 
 .hero {
   min-height: 72vh;
@@ -68,7 +69,10 @@ a:focus-visible { outline: 3px solid var(--gold); outline-offset: 3px; }
 }
 
 .story-forest { background-image: var(--forest-image, url('/images/forest-ridge.jpg')); }
-.story-activity { background-image: var(--activity-image, url('/images/activity-landscape.jpg')); }
+.story-activity {
+  background-image: var(--activity-image, url('/images/activity-landscape.jpg'));
+  background-position: center 75%;
+}
 .timeline { display: grid; gap: 1rem; grid-template-columns: repeat(4, 1fr); }
 .card { background: white; padding: 1.25rem; border-radius: 1rem; }
 .term-card { color: #132017; }

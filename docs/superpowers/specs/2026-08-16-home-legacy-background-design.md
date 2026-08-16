@@ -16,6 +16,13 @@ Use `參考資料/照片/IMG_0830.JPG`, a group photograph at Hehuan North Peak 
 - Retain the existing left-side text panel with a deep-green, left-to-right gradient. The opaque portion guarantees white text remains readable and fades before the flag and central group.
 - Preserve the current heading, description, and link destination.
 
+## Homepage Navigation Buttons
+
+- Convert every homepage content-section internal navigation link into the existing `CtaLink` button component: 「認識峰鷹 →」、「探索活動與社群 →」與「查看組織與傳承 →」.
+- Keep the existing gold button background, rounded shape, dark text, and visible keyboard focus treatment provided by `.cta`.
+- Keep the arrow in each label and retain the existing internal destinations: `/about/`, `/activities/`, and `/legacy/`.
+- Do not change the homepage hero's external recruitment button or the Association Information section, which has no navigation link.
+
 ## Image Handling
 
 - Add `IMG_0830.JPG` to the committed image pipeline as `public/images/legacy-group.jpg`.
@@ -24,5 +31,6 @@ Use `參考資料/照片/IMG_0830.JPG`, a group photograph at Hehuan North Peak 
 ## Validation
 
 - Add a regression check that the homepage legacy section uses `story-photo story-legacy` and that the image pipeline produces `legacy-group.jpg`.
+- Add a regression check that the three content-section navigation links use `CtaLink` with their existing labels and destinations.
 - Confirm the production build references `/images/legacy-group.jpg`.
 - Run the complete test suite and production build.

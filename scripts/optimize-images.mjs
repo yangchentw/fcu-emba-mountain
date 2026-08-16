@@ -6,6 +6,7 @@ const assets = [
   ['參考資料/照片/IMG20260517101342.JPG', 'public/images/forest-ridge.jpg'],
   ['參考資料/照片/IMG20260314124148.JPG', 'public/images/activity-landscape.jpg'],
   ['參考資料/照片/IMG20260705112817.jpg', 'public/images/about-mountain.jpg'],
+  ['參考資料/照片/IMG_0830.JPG', 'public/images/legacy-group.jpg'],
   // Keep the original 4:3 framing so the hiker and summit sign are both intact.
   ['參考資料/照片/IMG_1418.jpg', 'public/images/legacy-trail.jpg'],
   ['參考資料/照片/IMG20260517103606.JPG', 'public/images/join-ridge.jpg'],

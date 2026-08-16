@@ -90,6 +90,7 @@ a:focus-visible { outline: 3px solid var(--gold); outline-offset: 3px; }
   background-image: var(--activity-image, url('/images/activity-landscape.jpg'));
   background-position: center 75%;
 }
+.story-legacy { background-image: var(--legacy-image, url('/images/legacy-group.jpg')); }
 .timeline { display: grid; gap: 1rem; grid-template-columns: repeat(4, 1fr); }
 .card { background: white; padding: 1.25rem; border-radius: 1rem; }
 .term-card { color: #132017; }

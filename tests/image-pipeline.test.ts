@@ -6,6 +6,7 @@ test('the image command has a committed source-image pipeline', () => {
   const pipeline = readFileSync('scripts/optimize-images.mjs', 'utf8');
 
   expect(pipeline).toContain('hero-mountain.jpg');
+  expect(pipeline).toContain("['參考資料/照片/IMG_0830.JPG', 'public/images/legacy-group.jpg']");
   expect(pipeline).toContain("['參考資料/照片/IMG20260314124148.JPG', 'public/images/activity-landscape.jpg']");
   expect(pipeline).toContain('IMG_1418.jpg');
   expect(pipeline).toContain("['參考資料/照片/IMG_1418.jpg', 'public/images/legacy-trail.jpg']");
@@ -56,4 +57,15 @@ test('the activity page presents the complete branded photo in a dedicated hero'
   expect(css).toContain("center / contain no-repeat");
   expect(css).toContain('var(--ink);');
   expect(css).toMatch(/@media \(max-width: 760px\)[\s\S]*\.activity-hero__content\s*\{[^}]*width:\s*auto/);
+});
+
+test('the homepage legacy section uses the group photo and gold navigation buttons', () => {
+  const css = readFileSync('src/styles/global.css', 'utf8');
+  const homePage = readFileSync('src/pages/index.astro', 'utf8');
+
+  expect(homePage).toContain('class="story story-photo story-legacy reveal"');
+  expect(homePage).toContain('<CtaLink href={`${base}about/`} label="認識峰鷹 →" />');
+  expect(homePage).toContain('<CtaLink href={`${base}activities/`} label="探索活動與社群 →" />');
+  expect(homePage).toContain('<CtaLink href={`${base}legacy/`} label="查看組織與傳承 →" />');
+  expect(css).toContain(".story-legacy { background-image: var(--legacy-image, url('/images/legacy-group.jpg')); }");
 });

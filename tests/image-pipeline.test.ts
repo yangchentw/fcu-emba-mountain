@@ -69,3 +69,12 @@ test('the homepage legacy section uses the group photo and gold navigation butto
   expect(homePage).toContain('<CtaLink href={`${base}legacy/`} label="查看組織與傳承 →" />');
   expect(css).toContain(".story-legacy { background-image: var(--legacy-image, url('/images/legacy-group.jpg')); }");
 });
+
+test('homepage photo stories leave enough scroll distance to show their backgrounds', () => {
+  const css = readFileSync('src/styles/global.css', 'utf8');
+
+  expect(css).toMatch(/\.story-photo\s*\{[^}]*min-height:\s*78vh/);
+  expect(css).toMatch(/\.story-photo\s*>\s*div\s*\{[^}]*padding:\s*clamp\(5rem,\s*11vw,\s*11rem\)/);
+  expect(css).toMatch(/@media \(max-width: 760px\)[\s\S]*\.story-photo\s*\{[^}]*min-height:\s*62vh/);
+  expect(css).toMatch(/@media \(max-width: 760px\)[\s\S]*\.story-photo\s*>\s*div\s*\{[^}]*padding-block:\s*5rem/);
+});

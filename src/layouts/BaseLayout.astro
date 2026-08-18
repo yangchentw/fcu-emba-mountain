@@ -36,6 +36,13 @@ const structuredData = {
       url: siteBase,
       logo: new URL(site.logo, siteBase).href,
       sameAs: [externalLinks.facebook],
+      address: {
+        '@type': 'PostalAddress',
+        addressLocality: '台中市',
+        addressRegion: '西屯區',
+        streetAddress: '文華路 100 號 (逢甲大學)',
+        addressCountry: 'TW',
+      },
     },
     {
       '@type': 'WebSite',
@@ -67,4 +74,4 @@ const structuredData = {
   ],
 };
 ---
-<!doctype html><html lang="zh-Hant"><head><meta charset="utf-8" /><meta name="viewport" content="width=device-width" /><title>{`${title} ｜ ${site.name}`}</title><meta name="description" content={description} /><meta name="robots" content="index,follow" /><link rel="canonical" href={canonical} /><meta property="og:title" content={title} /><meta property="og:description" content={description} /><meta property="og:type" content="website" /><meta property="og:url" content={canonical} /><meta property="og:site_name" content={site.name} /><meta property="og:locale" content="zh_TW" /><meta property="og:image" content={absoluteImage} /><meta property="og:image:alt" content={socialImage.alt} /><meta name="twitter:card" content="summary_large_image" /><meta name="twitter:title" content={title} /><meta name="twitter:description" content={description} /><meta name="twitter:image" content={absoluteImage} /><script type="application/ld+json" set:html={JSON.stringify(structuredData)}></script></head><body><a class="skip" href="#main">跳至主要內容</a><Header />{pageImage && <img class:list={['page-image', pageImage.className]} src={pageImage.src} alt={pageImage.alt} loading="eager" />}<main id="main"><slot /></main><Footer /></body></html>
+<!doctype html><html lang="zh-Hant"><head><meta charset="utf-8" /><meta name="viewport" content="width=device-width" /><title>{`${title} ｜ ${site.name}`}</title><meta name="description" content={description} /><meta name="robots" content="index,follow" /><link rel="icon" type="image/png" href={`${base}images/logo.png`} /><link rel="canonical" href={canonical} /><meta property="og:title" content={title} /><meta property="og:description" content={description} /><meta property="og:type" content="website" /><meta property="og:url" content={canonical} /><meta property="og:site_name" content={site.name} /><meta property="og:locale" content="zh_TW" /><meta property="og:image" content={absoluteImage} /><meta property="og:image:alt" content={socialImage.alt} /><meta name="twitter:card" content="summary_large_image" /><meta name="twitter:title" content={title} /><meta name="twitter:description" content={description} /><meta name="twitter:image" content={absoluteImage} /><script type="application/ld+json" set:html={JSON.stringify(structuredData)}></script></head><body><a class="skip" href="#main">跳至主要內容</a><Header />{pageImage && <img class:list={['page-image', pageImage.className]} src={pageImage.src} alt={pageImage.alt} loading="eager" />}<main id="main"><slot /></main><Footer /></body></html>
